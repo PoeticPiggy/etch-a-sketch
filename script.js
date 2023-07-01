@@ -1,4 +1,5 @@
-let gridSize = 16;
+let gridSize = prompt('Enter grid size');
++gridSize;
 let allSquares = gridSize * gridSize;
 //Size of every box
 let boxSize = 10;
