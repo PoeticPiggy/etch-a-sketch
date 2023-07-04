@@ -10,6 +10,12 @@ let boxSize = 10;
 
 function createGrid () {
    let gridSize = prompt('Enter grid size');
+   console.log(gridSize);
+
+   while (gridSize < 10 || gridSize > 100) {
+      gridSize = prompt('Please enter a number between 10 and 100');
+   }
+
    //Changes grid size to number
    +gridSize;
    let allSquares = gridSize * gridSize;
@@ -39,3 +45,4 @@ function removeGrid () {
       box.remove();
    });
 }
+
