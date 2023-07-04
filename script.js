@@ -1,6 +1,5 @@
 const chooseGridSize = document.querySelector('.gridSize')
 const container = document.getElementById("container");
-const resetButton = document.querySelector('.reset');
 
 chooseGridSize.addEventListener('click', () => {
    removeGrid();
