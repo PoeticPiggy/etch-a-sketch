@@ -1,7 +1,9 @@
 const chooseGridSize = document.querySelector('.gridSize')
 const container = document.getElementById("container");
+const resetButton = document.querySelector('.reset');
 
 chooseGridSize.addEventListener('click', () => {
+   removeGrid();
    createGrid();
 });
 
@@ -24,9 +26,17 @@ function createGrid () {
 
    let boxes = document.querySelectorAll('.box');
 
+   //Select all boxes and add a mouseover event listener
    boxes.forEach((box) => {
       box.addEventListener('mouseover', () => {
          box.style.backgroundColor = 'black'
       });
+   });
+}
+
+function removeGrid () {
+   let boxes = document.querySelectorAll('.box');
+   boxes.forEach((box) => {
+      box.remove();
    });
 }
