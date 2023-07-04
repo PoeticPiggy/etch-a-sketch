@@ -19,11 +19,16 @@ body {
     padding-bottom: 50px;
 }
 
-.gridSize {
+.gridSize, .resetButton {
     font-size: 24px;
     height: 60px;
-    width: 260px;
+    width: 230px;
     margin-bottom: 30px;
+}
+
+.buttons {
+    gap: 7px;
+    display: flex;
 }
 
 .box {
