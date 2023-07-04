@@ -1,27 +1,32 @@
-let gridSize = prompt('Enter grid size');
-//Changes grid size to number
-+gridSize;
-//Calculates amount of squares needed
-let allSquares = gridSize * gridSize;
-//Size of every box
-let boxSize = 10;
-//Calculates container width
-let containerWidth = gridSize * boxSize + 'px';
-
-//For each square, add a div to container with a class of box
+const chooseGridSize = document.querySelector('.gridSize')
 const container = document.getElementById("container");
-for (var i = 0; i < allSquares; i++) {
-   div = document.createElement('div');
-   div.classList.add('box');
-   container.appendChild(div);
-}
 
-let boxes = document.querySelectorAll('.box');
-
-boxes.forEach((box) => {
-   box.addEventListener('mouseover', () => {
-      box.style.backgroundColor = 'black'
-    });
+chooseGridSize.addEventListener('click', () => {
+   createGrid();
 });
 
-container.style.maxWidth = containerWidth;
+let boxSize = 10;
+
+function createGrid () {
+   let gridSize = prompt('Enter grid size');
+   //Changes grid size to number
+   +gridSize;
+   let allSquares = gridSize * gridSize;
+   let containerWidth = gridSize * boxSize + 'px';
+   container.style.maxWidth = containerWidth;
+
+   //For each square, add a div to container with a class of box
+   for (var i = 0; i < allSquares; i++) {
+      div = document.createElement('div');
+      div.classList.add('box');
+      container.appendChild(div);
+   }
+
+   let boxes = document.querySelectorAll('.box');
+
+   boxes.forEach((box) => {
+      box.addEventListener('mouseover', () => {
+         box.style.backgroundColor = 'black'
+      });
+   });
+}
